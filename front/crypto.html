@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    	  <link rel="shortcut icon" type="images/teamwork.png">
+    <title>
+       teamwork
+    </title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="./css/x-admin.css" media="all">
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
+
+<body class="x-body"style="background-image: url(images/lab-3.png);overflow:scroll;">
+    <div class="x-nav">
+        <span class="layui-breadcrumb">
+              <a><cite>首页</cite></a>
+              <a><cite>crypto</cite></a>
+            </span>
+        <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);"
+            title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>
+            
+    </div>
+    <div>
+    </br>
+    </br>
+       <font style="font-size: 18px;color:#fff ;">&nbsp;&nbsp;&nbsp;&nbsp;本次大作业: </font>
+       </br>
+       </br>
+        <font style="font-size: 18px;color:#fff ;">  &nbsp;&nbsp;&nbsp;&nbsp;部分采用了pycrypto库， </font>
+        </br>
+        </br>
+         <font style="font-size: 18px;color:#fff ;"> &nbsp;&nbsp;&nbsp;&nbsp;部分算法为自己实现。 </font>
+    </div>
+  <!--  <script src='js/amxzqr.js'></script>-->
+    <script src="js/index2.js"></script>
+    <script src="./lib/layui/layui.js" charset="utf-8"></script>
+    <script src="./js/x-layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script type="text/javascript" src="jsonp.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#b01").click(function () {
+                var a = document.all['a'].value;
+                var b = document.all['b'].value;
+                var _url = 'http://127.0.0.1:1234/gcd';
+                $.ajax({
+                    url: _url,
+                    type: 'POST',
+                    data: {
+                        first: a,
+                        second: b
+                    },
+                    crossDomain: true,
+                    success: function (data) {
+                        if (data) {
+                            console.log('oooooooo');
+                            console.log(data);
+                            document.getElementById("result").value = data;
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        console.log(XMLHttpRequest);
+                        console.log(textStatus);
+                        console.log(errorThrown);
+                    }
+                });
+                $("#myDiv").html();
+            });
+        });
+    </script>
+
+</body>
+
+</html>

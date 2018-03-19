@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+             teamwork
+        </title>
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" href="./css/x-admin.css" media="all">
+        <link rel="stylesheet" href="css/style.css"> 
+        	
+        </style>
+    </head>
+    <body class="x-body"style="background-image: url(images/lab4-des.png);overflow:scroll;">
+        <div class="x-nav">
+            <span class="layui-breadcrumb">
+              <a><cite>首页</cite></a>
+              <a><cite>DES</cite></a>
+
+            </span>
+            <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>
+        </div>
+         <div style="position:absolute;top:150px;left:80px">
+           	<div class="svg-wrapper" >
+  				<svg height="60" width="320" >
+    			<rect class="shape" height="60" width="320" />
+  				</svg>
+    			<div class="text1"><a href="DESjiami.html"style="text-decoration:none;color: #fff;">DES加密</a></div>
+			</div>
+ 			<div class="svg-wrapper" style="top:50px">
+  				<svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
+   				 <rect class="shape" height="60" width="320" />
+  				</svg>
+    			<div class="text1"><a href="DESjiemi.html"style="text-decoration:none;color: #fff;">DES解密</a></div>
+			</div>   
+        </div> 
+      
+        <script src="js/index.js"></script>
+        <script src="./lib/layui/layui.js" charset="utf-8"></script>
+        <script src="./js/x-layui.js" charset="utf-8"></script>
+        <script>
+            layui.use(['element','laypage','layer','form'], function(){
+                $ = layui.jquery;//jquery
+              lement = layui.element();//面包导航
+              laypage = layui.laypage;//分页
+              layer = layui.layer;//弹出层
+              form = layui.form();//弹出层
+
+
+          })
+
+              
+
+              //以上模块根据需要引入
+
+            //批量删除提交
+             function delAll () {
+                layer.confirm('确认要删除吗？',function(index){
+                    //捉到所有被选中的，发异步进行删除
+                    layer.msg('删除成功', {icon: 1});
+                });
+             }
+            
+            
+            /*删除*/
+            function commemt_del(obj,id){
+                layer.confirm('确认要删除吗？',function(index){
+                    //发异步删除数据
+                    $(obj).parents("tr").remove();
+                    layer.msg('已删除!',{icon:1,time:1000});
+                });
+            }
+            </script>
+            <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+    </body>
+</html>
